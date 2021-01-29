@@ -1,0 +1,22 @@
+.ds-breadcrumb {
+  &.ant-breadcrumb {
+    .ant-breadcrumb {
+      &-link {
+        a {
+          color: $primary;
+        }
+      }
+
+      &-separator {
+        .anticon {
+          vertical-align: 0;
+
+          svg {
+            font-size: 9px;
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}

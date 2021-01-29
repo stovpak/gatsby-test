@@ -1,0 +1,37 @@
+.cooperation {
+  &.ds {
+    &-title {
+      &.ant-typography {
+        margin-bottom: 60px;
+
+        @media (max-width: $screen-xs-max) {
+          margin-bottom: 15px;
+        }
+      }
+    }
+
+    &-steps {
+      margin-left: 45px;
+      position: relative;
+      list-style: none;
+      counter-reset: progress;
+
+      &:before {
+        display: inline-block;
+        content: "";
+        position: absolute;
+        top: 12px;
+        left: 9px;
+        width: 1px;
+        background-color: $primary;
+        height: calc(100% - 40px);
+      }
+    }
+  }
+
+  .content {
+    @media (min-width: $screen-lg-min) {
+      padding-left: 70px;
+    }
+  }
+}

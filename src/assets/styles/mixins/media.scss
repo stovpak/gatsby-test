@@ -1,0 +1,83 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint == ss-max {
+    @media only screen and (max-width: $screen-ss-max) {
+      @content;
+    } //360px
+  }
+  @if $breakpoint == xs-max {
+    @media only screen and (max-width: $screen-xs-max) {
+      @content;
+    } //576px
+  }
+
+  @if $breakpoint == sm-min {
+    @media only screen and (min-width: $screen-sm-min) {
+      @content;
+    } //577px
+  }
+
+  @if $breakpoint == sm-max {
+    @media only screen and (max-width: $screen-sm-max) {
+      @content;
+    } //767px
+  }
+
+  @if $breakpoint == md-min {
+    @media only screen and (min-width: $screen-md-min) {
+      @content;
+    } //768px
+  }
+
+  @if $breakpoint == md-max {
+    @media only screen and (max-width: $screen-md-max) {
+      @content;
+    } //991px
+  }
+
+  @if $breakpoint == lg-min {
+    @media only screen and (min-width: $screen-lg-min) {
+      @content;
+    } //992px
+  }
+
+  @if $breakpoint == lg-max {
+    @media only screen and (max-width: $screen-lg-max) {
+      @content;
+    } //1199px
+  }
+
+  @if $breakpoint == xl-min {
+    @media only screen and (min-width: $screen-xl-min) {
+      @content;
+    } //1200px
+  }
+
+  @if $breakpoint == mdpi-max {
+    @media only screen and (max-width: $screen-mdpi-max) {
+      @content;
+    } //1280px
+  }
+
+  @if $breakpoint == ipad-max {
+    @media only screen and (max-width: $screen-ipad-max) {
+      @content;
+    } //1366px
+  }
+
+  @if $breakpoint == xl-max {
+    @media only screen and (max-width: $screen-xl-max) {
+      @content;
+    } //1599px
+  }
+
+  @if $breakpoint == xxl-min {
+    @media only screen and (min-width: $screen-xxl-min) {
+      @content;
+    } //1600px
+  }
+  @if $breakpoint == macbook-pro {
+    @media only screen and (min-width: $screen-sm-max) and (max-width: $screen-xl-min) {
+      @content;
+    } //1600px
+  }
+}

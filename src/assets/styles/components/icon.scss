@@ -1,0 +1,22 @@
+.anticon {
+  .ds-button-icon & {
+    transition: stroke 0.2s ease;
+  
+    will-change: stroke;
+  }
+
+  .ds-button-icon:hover &,
+  .ds-button-icon-reverse:hover & {
+    stroke: $primary-secondary;
+  }
+
+  .ant-btn-icon-only.ds-button-lg-extra & {
+    font-size: 36px;
+
+    @extend .flex_center;
+  }
+}
+
+.ds-icon {
+  @extend .flex_center;
+}

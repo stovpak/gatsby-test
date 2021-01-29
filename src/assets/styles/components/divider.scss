@@ -1,0 +1,22 @@
+.ant-divider {
+  &.ds-divider {
+    &-primary {
+      border-color: $primary;
+      border-top-color: $primary;
+    }
+  }
+
+  &.ant-divider-with-text {
+    &.ds-divider {
+      &-primary {
+        border-color: $primary;
+        border-top-color: $primary;
+
+        &:before,
+        &:after {
+          height: 2px;
+        }
+      }
+    }
+  }
+}

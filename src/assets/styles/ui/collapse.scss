@@ -1,0 +1,50 @@
+.ds-collapse {
+  &.ant-collapse {
+    &-borderless {
+      background-color: white;
+
+      .ant-collapse {
+        &-item {
+          border-color: $muted-tertiary;
+
+          .ant-collapse-content {
+            .ant-collapse-content-box {
+              padding: 0 0 0 20px;
+            }
+          }
+        }
+      }
+    }
+
+    .ant-collapse {
+      &-item {
+        .ant-collapse-header {
+          padding: 20px 20px 20px 0;
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: $bold;
+          color: black;
+
+          .ant-collapse-arrow {
+            right: 2px;
+            color: $primary;
+            @include setTransition(transform);
+          }
+        }
+
+        &-active {
+          .ant-collapse {
+            &-header {
+              border-bottom: 1px solid $muted-tertiary;
+              transition: none;
+
+              .ds-icon {
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

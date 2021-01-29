@@ -1,0 +1,61 @@
+.ds-form {
+  &.ant-form {
+    .ant-form {
+      &-item {
+        margin-bottom: 15px;
+
+        &-explain {
+          position: absolute;
+          bottom: -25px;
+          font-size: 12px;
+        }
+
+        &-control {
+          width: 100%;
+
+          &-input {
+            min-height: 20px;
+
+            &-content {
+              textarea {
+                border: 1px solid $muted;
+                margin-top: 5px;
+                margin-bottom: -15px;
+
+                &.ant-input {
+                  &:focus,
+                  &-focused {
+                    box-shadow: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &-item-label {
+        width: 100%;
+        text-align: left;
+        line-height: 18px;
+
+        & > label {
+          height: auto;
+          font-size: 14px;
+          line-height: 18px;
+
+          &.ant-form-item-required {
+            &:before {
+              position: absolute;
+              right: -12px;
+            }
+          }
+
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

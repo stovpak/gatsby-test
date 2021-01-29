@@ -1,0 +1,168 @@
+@for $i from 0 through 100 {
+  .ml- {
+    &#{$i} {
+      margin-left: $i + px;
+    }
+  }
+
+  .mr- {
+    &#{$i} {
+      margin-right: $i + px;
+    }
+  }
+
+  .mt- {
+    &#{$i} {
+      margin-top: $i + px;
+    }
+  }
+
+  .mb- {
+    &#{$i} {
+      margin-bottom: $i + px;
+    }
+  }
+
+  .pl- {
+    &#{$i} {
+      padding-left: $i + px;
+    }
+  }
+
+  .pr- {
+    &#{$i} {
+      padding-right: $i + px;
+    }
+  }
+
+  .pt- {
+    &#{$i} {
+      padding-top: $i + px;
+    }
+  }
+
+  .pb- {
+    &#{$i} {
+      padding-bottom: $i + px;
+    }
+  }
+
+  .m-0-auto- {
+    &#{$i} {
+      margin: 0 auto $i + px;
+    }
+  }
+
+  .m- {
+    &#{$i}-auto {
+      margin: $i + px auto 0;
+    }
+  }
+}
+
+@for $i from 50 through 1500 {
+  .max {
+    &-width- {
+      &#{$i} {
+        max-width: $i + px;
+      }
+    }
+
+    &-sm {
+      &-width- {
+        &#{$i} {
+          @media (max-width: $screen-sm-max) {
+            max-width: $i + px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@for $i from 0 through 100 {
+  .top- {
+    &#{$i} {
+      top: $i + px;
+    }
+  }
+
+  .bottom- {
+    &#{$i} {
+      bottom: $i + px;
+    }
+  }
+
+  .left- {
+    &#{$i} {
+      left: $i + px;
+    }
+  }
+
+  .right- {
+    &#{$i} {
+      right: $i + px;
+    }
+  }
+
+  .z-index- {
+    &#{$i} {
+      z-index: $i;
+    }
+  }
+}
+
+@for $i from 0 through 50 {
+  .fs- {
+    &#{$i} {
+      font-size: $i + px;
+      line-height: $i * 1.35 + px;
+    }
+  }
+}
+
+@mixin cornerGradient($colorStart, $colorEnd) {
+  background: $colorStart;
+  background: -moz-linear-gradient(
+    -45deg,
+    rgba($colorStart, 1) 0%,
+    rgba($colorEnd, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    -45deg,
+    rgba($colorStart, 1) 0%,
+    rgba($colorEnd, 1) 100%
+  );
+  background: linear-gradient(
+    -45deg,
+    rgba($colorStart, 1) 0%,
+    rgba($colorEnd, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$colorStart, endColorstr=$colorEnd,GradientType=1 );
+}
+
+@mixin horizontalGradient(
+  $colorStart,
+  $colorStartOpacity,
+  $colorEnd,
+  $colorEndOpacity,
+  $deg
+) {
+  background: $colorStart;
+  background: -moz-linear-gradient(
+    $deg,
+    rgba($colorStart, $colorStartOpacity) 20%,
+    rgba($colorEnd, $colorEndOpacity) 100%
+  );
+  background: -webkit-linear-gradient(
+    $deg,
+    rgba($colorStart, $colorStartOpacity) 20%,
+    rgba($colorEnd, $colorEndOpacity) 100%
+  );
+  background: linear-gradient(
+    $deg,
+    rgba($colorStart, $colorStartOpacity) 20%,
+    rgba($colorEnd, $colorEndOpacity) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$colorStart, endColorstr=$colorEnd,GradientType=1 );
+}

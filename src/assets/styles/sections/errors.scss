@@ -1,0 +1,36 @@
+.ds {
+  &-errors {
+    min-height: calc(100vh - 125px);
+
+    &:after {
+      content: "";
+      display: block;
+      width: 60%;
+      height: 80%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background-image: url("/images/blue-watermark.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: bottom left;
+    }
+
+    .errors {
+      &-title {
+        &.ant-typography {
+          font-size: 175px;
+          margin-bottom: 0;
+        }
+      }
+
+      &-description {
+        &.ant-typography {
+          margin-top: 0;
+          font-weight: $bold;
+          max-width: 50%;
+        }
+      }
+    }
+  }
+}

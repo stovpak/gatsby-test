@@ -1,0 +1,477 @@
+.ds {
+  &-h1 {
+    &.ant-typography {
+      font-size: 52px;
+      line-height: 64px;
+
+      @media (max-width: $screen-md-max) {
+        font-size: 24px;
+        line-height: 30px;
+      }
+    }
+  }
+
+  &-h2 {
+    &.ant-typography {
+      font-size: 28px;
+      line-height: 36px;
+
+      @media (max-width: $screen-md-max) {
+        font-size: 20px;
+        line-height: 26px;
+      }
+    }
+  }
+
+  &-h4 {
+    &.ant-typography {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  &-h5 {
+    &.ant-typography {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &-regular {
+    &.ant-typography {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 100;
+      color: $muted;
+    }
+  }
+
+  &-h1,
+  &-h2,
+  &-h3,
+  &-h4,
+  &-h5 {
+    &.ant-typography {
+      margin-top: 0;
+      font-weight: bold;
+    }
+  }
+
+  &-markdown {
+    p {
+      color: $muted;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: $regular;
+    }
+
+    ul {
+      padding-left: 0;
+
+      li {
+        position: relative;
+        list-style: none;
+        margin-bottom: 10px;
+        padding-left: 20px;
+
+        color: $muted;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: $regular;
+
+        &:before {
+          content: "";
+          display: block;
+          width: 4px;
+          height: 4px;
+          background-color: $primary;
+          border-radius: 100%;
+          position: absolute;
+          top: 8px;
+          left: 5px;
+        }
+      }
+    }
+  }
+}
+
+.ant {
+  &-typography {
+    &.ant-typography {
+      &-danger {
+        color: $danger !important;
+      }
+
+      &-success {
+        color: $success !important;
+      }
+    }
+
+    &.text {
+      &-white {
+        color: white;
+      }
+
+      &-black {
+        color: black;
+      }
+
+      &-primary {
+        color: $primary;
+      }
+
+      &-muted {
+        color: $muted;
+      }
+
+      &-muted-secondary {
+        color: $muted-secondary;
+      }
+
+      &-small {
+        font-size: 16px;
+
+        line-height: 26px;
+      }
+
+      &-center {
+        text-align: center;
+      }
+    }
+
+    & + .ds-h1,
+    & + .ds-h2,
+    & + .ds-h3,
+    & + .ds-h4,
+    & + .ds-h5 {
+      &.ant-typography {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.text {
+  &-white {
+    color: white;
+  }
+
+  &-black {
+    color: black;
+  }
+
+  &-primary {
+    color: $primary;
+  }
+
+  &-small {
+    font-size: 16px;
+
+    line-height: 26px;
+  }
+
+  &-center {
+    text-align: center;
+  }
+}
+
+@for $i from 0 through 6 {
+  .ds-h#{$i},
+  h#{$i},
+  .h#{$i}.ds-h#{$i},
+  .h#{$i} {
+    font-family: $inter;
+    font-weight: $bold;
+
+    &.mb {
+      &-sm {
+        margin-bottom: 25px;
+      }
+    }
+
+    @if $i == 1 {
+      font-size: 52px;
+
+      &.wide {
+        letter-spacing: 2px;
+        // wide rules
+      }
+
+      &.secondary {
+        font-family: "Courier New", Courier, monospace;
+        // secondary rules
+      }
+
+      &.small {
+        font-size: 48px;
+        // small rules
+      }
+
+      &.extra {
+        font-size: 60px;
+        // extra rules
+      }
+    }
+
+    @if $i == 2 {
+      font-size: 36px;
+    }
+
+    @if $i == 3 {
+      font-size: 28px;
+    }
+
+    @if $i == 4 {
+      font-size: 18px;
+    }
+
+    @if $i == 5 {
+      font-size: 16px;
+    }
+  }
+}
+
+.text-default {
+  color: $muted;
+  font-size: 16px;
+
+  font-family: $inter;
+
+  white-space: normal;
+
+  &.extra {
+    font-weight: $regular;
+
+    letter-spacing: 0.5px;
+    font-size: 18px;
+
+    @media (max-width: $screen-sm-max) {
+      font-size: 14.5px;
+    }
+
+    & + .text-default {
+      &.extra {
+        @media (max-width: $screen-sm-max) {
+          margin-top: 5px;
+        }
+      }
+    }
+
+    p {
+      @media (max-width: $screen-sm-max) {
+        margin-bottom: 0;
+      }
+    }
+
+    &.small {
+      font-size: 11px;
+
+      line-height: 1;
+
+      & + .ds-link {
+        font-size: 11px;
+        line-height: 1;
+
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &.small {
+    font-size: 16px;
+  }
+
+  &.smaller {
+    display: block;
+
+    font-size: 15px;
+
+    margin-bottom: 15px;
+
+    &.mb-0 {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.lh {
+  &-0 {
+    line-height: 0;
+  }
+
+  &-1 {
+    line-height: 1;
+
+    &_2 {
+      line-height: 1.2;
+    }
+  }
+}
+
+.ls {
+  &-0 {
+    &_3 {
+      letter-spacing: 0.3px;
+    }
+  }
+}
+
+.ant {
+  &-typography {
+    .slide & {
+      display: flex;
+
+      margin-bottom: 20px;
+    }
+
+    &.text {
+      &-white {
+        color: #fff;
+      }
+
+      &-muted {
+        color: $muted;
+      }
+    }
+
+    &.ds-typography {
+      &-title {
+        display: flex;
+        margin-bottom: 6px;
+      }
+    }
+  }
+}
+
+.text {
+  &-uppercase {
+    text-transform: uppercase;
+
+    span {
+      text-transform: uppercase;
+    }
+  }
+
+  &-capitalize {
+    text-transform: capitalize;
+
+    span {
+      text-transform: capitalize;
+    }
+  }
+
+  &-lowercase {
+    text-transform: lowercase;
+  }
+
+  &-block {
+    &-md {
+      width: 100%;
+      max-width: 900px;
+
+      margin: 0 auto;
+
+      &.extra {
+        margin-bottom: 50px;
+
+        @media (max-width: $screen-sm-max) {
+          margin-top: 20px;
+          margin-bottom: 25px;
+        }
+      }
+    }
+  }
+
+  &-helper {
+    font-size: 12px;
+
+    &.small {
+      font-size: 11px;
+    }
+  }
+
+  &-underline {
+    text-decoration: underline;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    &-hover {
+      will-change: text-decoration, cursor;
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+
+    span {
+      text-decoration: underline;
+    }
+  }
+
+  &-primary {
+    color: $primary;
+  }
+
+  &-success {
+    color: $success;
+
+    &-secondary {
+      color: $success-secondary;
+    }
+  }
+
+  &-default {
+    &-secondary {
+      font-size: 18px;
+      letter-spacing: -0.65px;
+    }
+  }
+
+  &-danger {
+    color: $danger;
+  }
+
+  &-italic {
+    font-style: italic;
+  }
+
+  &-thin {
+    font-weight: $thin;
+  }
+
+  &-regular {
+    font-weight: $regular;
+  }
+
+  &-light {
+    font-weight: $light;
+  }
+
+  &-bold {
+    font-weight: $bold;
+
+    &-extra {
+      font-weight: $bolder;
+    }
+  }
+
+  &-white {
+    color: #fff;
+  }
+
+  &-muted {
+    color: $muted;
+  }
+
+  &-right {
+    text-align: right;
+  }
+
+  &-center {
+    text-align: center;
+  }
+}

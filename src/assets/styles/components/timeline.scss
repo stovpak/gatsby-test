@@ -1,0 +1,198 @@
+.ds-timeline {
+  &.ant-timeline {
+    padding-left: 40px;
+    counter-reset: progress;
+
+    @media (max-width: $screen-md-max) {
+      padding-left: 12px;
+    }
+
+    &:hover {
+      margin-bottom: -50px;
+
+      @media (max-width: $screen-md-max) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.ds {
+  &-timeline {
+    &-item {
+      &.ant-timeline-item-last {
+        .ant-timeline-item {
+          will-change: margin-bottom;
+
+          &:hover {
+            margin-bottom: 0;
+          }
+        }
+
+        .ant-timeline-item-tail {
+          display: none;
+        }
+      }
+
+      .ant-timeline {
+        &-item {
+          counter-increment: progress;
+          padding-top: 20px;
+          @include setTransition(box-shadow);
+
+          @media (max-width: $screen-md-max) {
+            pointer-events: none;
+          }
+
+          &-head {
+            border: none;
+            background-color: $primary;
+            width: 20px;
+            height: 20px;
+
+            &::before {
+              content: counters(progress, ".") " ";
+              z-index: 5;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: white;
+              font-size: 12px;
+              border-radius: 50%;
+              height: 20px;
+              z-index: 1;
+
+              @media (max-width: $screen-md-max) {
+                width: 30px;
+                height: 30px;
+                font-size: 18px;
+                transform: translate(-50%, -50%);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                background-color: $primary;
+              }
+            }
+
+            &::after {
+              @media (max-width: $screen-md-max) {
+                content: "";
+                width: 45px;
+                height: 45px;
+                background-color: lighten($primary, 30%);
+                position: absolute;
+                transform: translate(-50%, -50%);
+                top: 50%;
+                left: 50%;
+                border-radius: 50%;
+                z-index: -1;
+              }
+            }
+          }
+
+          &-content {
+            padding-top: 5px;
+            margin-left: 55px;
+
+            @media (max-width: $screen-md-max) {
+              top: -25px;
+            }
+
+            .timeline {
+              &-description {
+                max-width: 270px;
+                display: none;
+
+                @media (max-width: $screen-md-max) {
+                  display: block;
+                  max-width: 100%;
+                }
+              }
+
+              &-title {
+                font-weight: $thin;
+
+                @media (max-width: $screen-md-max) {
+                  font-weight: $bold;
+                  color: black;
+                }
+              }
+            }
+          }
+
+          &-tail {
+            height: 100%;
+            left: 9px;
+            border-left: 1px solid $primary;
+            top: 20px;
+          }
+
+          &:hover {
+            padding: 20px 30px 25px 40px;
+            box-shadow: $default-box-shadow;
+            margin-left: -38px;
+            margin-bottom: 20px;
+            border-radius: 9px;
+            background-color: white;
+            @include setTransition(margin-top, box-shadow);
+
+            .ant-timeline-item {
+              &-tail {
+                height: 40px;
+                top: inherit;
+                left: 47px;
+                bottom: -30%;
+              }
+
+              &-content {
+                .timeline {
+                  &-description {
+                    display: block;
+                  }
+
+                  &-title {
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    font-size: 20px;
+                    line-height: 36px;
+                    color: $muted;
+                  }
+                }
+              }
+
+              &-head {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+
+                &::after {
+                  content: "";
+                  width: 45px;
+                  height: 45px;
+                  background-color: lighten($primary, 30%);
+                  position: absolute;
+                  transform: translate(-50%, -50%);
+                  top: 50%;
+                  left: 50%;
+                  border-radius: 50%;
+                  z-index: -1;
+                }
+
+                &::before {
+                  width: 30px;
+                  height: 30px;
+                  font-size: 18px;
+                  transform: translate(-50%, -50%);
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  background-color: $primary;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

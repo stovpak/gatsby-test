@@ -1,0 +1,39 @@
+.gradient-bg {
+  position: absolute;
+
+  &:after {
+    content: "";
+    display: block;
+    width: 1060px;
+    height: 830px;
+    background-image: url("/images/blur-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 0;
+
+    @media (max-width: $screen-md-max) {
+      display: none;
+    }
+  }
+
+  &-left {
+    left: -600px;
+  }
+
+  &-right {
+    right: -600px;
+  }
+
+  &-top {
+    top: 0;
+  }
+
+  &-center {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &-bottom {
+    bottom: 0;
+  }
+}

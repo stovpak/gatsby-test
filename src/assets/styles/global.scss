@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700;800;900&display=swap");
+
+@import "./abstracts/variable.scss";
+@import "./abstracts/mixins.scss";
+
+@import "./mixins/media.scss";
+@import "./mixins/general.scss";
+
+@import "./ui/dropdown.scss";
+@import "./ui/slick.scss";
+@import "./ui/breadcrumb.scss";
+@import "./ui/modal.scss";
+@import "./ui/select.scss";
+@import "./ui/input.scss";
+@import "./ui/upload.scss";
+@import "./ui/form.scss";
+@import "./ui/collapse.scss";
+
+@import "./common/flex.scss";
+@import "./common/grid.scss";
+@import "./common/common.scss";
+@import "./common/typography.scss";
+@import "./common/section.scss";
+@import "./common/animations.scss";
+
+@import "./components/label.scss";
+@import "./components/image.scss";
+@import "./components/card.scss";
+@import "./components/divider.scss";
+@import "./components/button.scss";
+@import "./components/icon.scss";
+@import "./components/link.scss";
+@import "./components/timeline.scss";
+
+@import "./partials/header.scss";
+@import "./partials/footer.scss";
+
+@import "./sections/hero-slider";
+@import "./sections/information-block";
+@import "./sections/image-variation";
+@import "./sections/cooperation";
+@import "./sections/ideas";
+@import "./sections/stories";
+@import "./sections/rich-text";
+@import "./sections/errors";
+@import "./sections/cookies";

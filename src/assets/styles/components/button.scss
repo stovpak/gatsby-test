@@ -1,0 +1,109 @@
+.ant-btn {
+  &-circle {
+    &.ds-button {
+      min-width: 10px;
+      width: auto;
+    }
+
+    &.ant-btn {
+      display: inline-flex;
+
+      &-lg {
+        &.ds-button {
+          min-width: 52px;
+          min-height: 52px;
+
+          &-lg {
+            &-extra {
+              min-width: 84px;
+
+              &.ant-btn-icon-only {
+                min-height: 84px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.ds-button {
+    font-size: 14px;
+    font-family: $inter;
+    font-weight: $bold;
+    color: $primary;
+    text-rendering: geometricPrecision;
+
+    height: auto;
+
+    border-width: 0;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+    border-radius: 6px;
+    background-color: white;
+
+    will-change: color;
+
+    &:hover {
+      color: $primary-secondary;
+    }
+
+    &:not(.ant-btn-icon-only) {
+      min-width: 160px;
+      padding: 9px 30px;
+    }
+
+    &-icon-rotated {
+      .anticon {
+        transform: rotate(180deg);
+      }
+    }
+
+    &-icon {
+      &-reverse {
+        @extend .flex_center;
+        flex-direction: row-reverse;
+
+        .anticon {
+          @extend .flex_center;
+
+          margin-left: 12px;
+          font-size: 6px;
+          stroke: $primary;
+          stroke-width: 100px;
+        }
+      }
+    }
+
+    &.text {
+      &-default {
+        color: $muted;
+
+        &:hover {
+          color: $primary-secondary;
+        }
+      }
+    }
+  }
+
+  &-primary {
+    &.ds-button {
+      color: #fff;
+
+      background-color: $primary;
+      box-shadow: 0 0 0 0 $none;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  &-white {
+    &.ant-btn-background-ghost {
+      &.ds-button {
+        background-color: $none;
+        box-shadow: 0 0 0 $none;
+      }
+    }
+  }
+}

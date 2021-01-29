@@ -1,0 +1,42 @@
+.ds-upload {
+  .ant-upload {
+    &-list {
+      margin-bottom: 30px;
+
+      &-item {
+        &-info {
+          padding: 0;
+        }
+
+        &-card-actions {
+          svg {
+            color: $primary;
+          }
+        }
+      }
+
+      &-text {
+        color: $primary;
+
+        &-icon {
+          svg {
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    &-text {
+      &-icon {
+        svg {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  &-label {
+    padding-left: 5px;
+    color: $primary;
+  }
+}

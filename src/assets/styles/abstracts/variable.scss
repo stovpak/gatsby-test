@@ -1,0 +1,47 @@
+$inter:              "Inter", sans-serif;
+$thin:               200;
+$light:              300;
+$regular:            400;
+$medium:             500;
+$semi:               600;
+$bold:               700;
+$bolder:             800;
+$extrabold:          900;
+
+
+$primary:            #005eff;
+$primary-secondary:  #299CFF;
+$success:            #00DF67;
+$success-secondary:  #7aeeb0;
+$info:               #2df9f9;
+$info-secondary:     #9BC0FF;
+$muted:              #424242;
+$muted-secondary:    #7e7e7e;
+$muted-tertiary:     #ececec;
+$danger:             #FF3030;
+$danger-secondary:   #ffb7b7;
+$warning:            #ffb730;
+$warning-secondary:  #ffe2ac;
+$none:               transparent;
+
+$default-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+
+$default-transition-time: 0.25s;
+
+$screen-ss-max:      360px;
+$screen-xs-max:      576px;
+$screen-sm-min:      577px;
+$screen-sm-max:      767px;
+$screen-md-min:      768px;
+$screen-md-max:      991px;
+$screen-lg-min:      992px;
+$screen-lg-max:      1199px;
+$screen-xl-min:      1200px;
+$screen-mdpi-max:    1280px;
+$screen-ipad-max:    1366px;
+$screen-xl-max:      1599px;
+$screen-xxl-min:     1600px;
+
+$container-fluid-xs: 475px;
+$container-fluid-sm: 690px;
+$container-fluid-md: 920px;

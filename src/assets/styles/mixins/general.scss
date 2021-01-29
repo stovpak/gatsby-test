@@ -1,0 +1,3 @@
+@mixin setTransition($values...) {
+  transition: $values $default-transition-time ease;
+}

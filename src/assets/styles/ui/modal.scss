@@ -1,0 +1,68 @@
+.ds {
+  &-modal {
+    &-sm {
+      .ant-modal {
+        max-width: 400px;
+      }
+    }
+
+    .ant-modal {
+      &-body {
+        padding: 20px;
+      }
+
+      &-content {
+        box-shadow: $default-box-shadow;
+        border-radius: 9px;
+      }
+    }
+
+    &-close {
+      &-left {
+        left: -230px;
+      }
+    }
+  }
+
+  &-contact-modal {
+    .ant-modal {
+      &-body {
+        padding: 35px 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+
+        .modal {
+          &-title {
+            &.ant-typography {
+              margin-top: 20px;
+              margin-bottom: 20px;
+            }
+          }
+
+          &-text {
+            &.ant-typography {
+              margin-bottom: 35px;
+              max-width: 260px;
+              font-size: 16px;
+            }
+          }
+        }
+
+        .ds-icon {
+          svg {
+            color: $success;
+          }
+
+          &-error {
+            svg {
+              color: $warning;
+            }
+          }
+        }
+      }
+    }
+  }
+}

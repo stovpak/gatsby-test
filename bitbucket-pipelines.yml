@@ -1,0 +1,40 @@
+definitions:
+  steps:
+      - step: &build-application
+          name: build application
+          image: tarasminaev/node_awscli:latest
+          # deployment: dev
+          caches:
+            - node
+          script: &build-application-script 
+          #    - unset CI
+              - yarn install
+              - yarn run clean  
+              - yarn run build 
+              - yarn run deploy
+
+pipelines:
+
+    # default:
+    #     - step: *build-application
+            
+    branches:
+      dev:
+        - step:
+            name: build and deploy development
+            image: tarasminaev/node_awscli:latest
+            deployment: dev
+            size: 2x
+            caches:
+              - node
+            script: *build-application-script
+
+      production:
+        - step:
+            name: build and deploy production
+            image: tarasminaev/node_awscli:latest
+            deployment: production
+            size: 2x
+            caches:
+              - node
+            script: *build-application-script

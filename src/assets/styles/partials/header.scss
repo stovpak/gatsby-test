@@ -1,0 +1,294 @@
+header {
+  &.ant-layout-header {
+    padding: 0;
+    height: auto;
+    background: transparent;
+    z-index: 10;
+  }
+}
+
+.header {
+  display: flex;
+  padding-top: 13px;
+
+  &-content-mobile {
+    .burger-menu-btn {
+      color: white;
+    }
+  }
+
+  &-content {
+    @include setTransition(background-color);
+
+    @media (max-width: $screen-md-max) {
+      display: none;
+    }
+
+    &-mobile {
+      min-height: 70px;
+      position: absolute;
+      width: 100%;
+      display: none;
+      @include setTransition(background-color);
+
+      @media (max-width: $screen-md-max) {
+        display: block;
+      }
+
+      .button-wrap {
+        display: none;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .header-mobile-menu {
+        display: none;
+
+        .link-wrap:not(:last-of-type) {
+          border-bottom: 1px solid $muted-tertiary;
+        }
+
+        .ds-icon {
+          color: $primary;
+        }
+      }
+
+      &.opened {
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+        background-color: white;
+
+        .header-mobile-menu,
+        .button-wrap {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &-main {
+    background-color: $none;
+    margin-bottom: -105px;
+
+    .header {
+      &-logo {
+        &-primary {
+          display: block;
+        }
+
+        &-secondary {
+          display: none;
+        }
+      }
+
+      &-content {
+        background-color: $none;
+        box-shadow: none;
+        padding: 17px 0;
+
+        &:after {
+          content: "";
+          display: block;
+          background-color: white;
+          width: 51%;
+          height: 80px;
+          filter: blur(20px);
+          position: absolute;
+          top: -10px;
+          right: 0;
+          z-index: -1;
+        }
+      }
+    }
+  }
+
+  &-secondary {
+    margin-bottom: 40px;
+
+    @media (max-width: $screen-md-max) {
+      margin-bottom: 90px;
+    }
+
+    .header {
+      &-content {
+        padding: 10px 0;
+        background-color: white;
+
+        &:after {
+          content: "";
+          display: block;
+          background-color: white;
+          width: 51%;
+          height: 80px;
+          filter: blur(20px);
+          position: absolute;
+          top: -10px;
+          right: 0;
+          z-index: -1;
+        }
+
+        .header {
+          margin-bottom: 40px;
+
+          &-logo {
+            &-primary {
+              display: none;
+            }
+
+            &-secondary {
+              display: block;
+            }
+          }
+        }
+
+        &.sticky {
+          padding: 20px 0;
+          background-color: white;
+          box-shadow: $default-box-shadow;
+
+          .header {
+            &-logo {
+              @include setTransition(width);
+
+              &-primary {
+                display: none;
+              }
+
+              &-secondary {
+                display: block;
+              }
+            }
+
+            &-content-mobile {
+              background: red;
+              .burger-menu-btn {
+                color: green;
+              }
+            }
+
+            &-toggle {
+              &.ant-btn {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+
+      &-content-mobile {
+        .header-logo-wrap {
+          .header {
+            &-logo-primary {
+              display: none;
+            }
+
+            &-logo-secondary {
+              display: block;
+            }
+          }
+        }
+
+        .burger-menu-btn {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  &-sticky {
+    position: sticky;
+    top: 0;
+
+    .header {
+      &-logo {
+        &-primary {
+          display: none;
+        }
+
+        &-secondary {
+          display: block;
+        }
+      }
+
+      &-content,
+      &-content-mobile {
+        background-color: white;
+        box-shadow: $default-box-shadow;
+      }
+
+      &-content-mobile {
+        .burger-menu-btn {
+          color: $primary;
+        }
+      }
+
+      &-toggle {
+        &.ant-btn {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &-active {
+    .header {
+      &-toggle {
+        display: block;
+      }
+    }
+  }
+
+  &-logo {
+    width: 140px;
+    will-change: opacity;
+    @include setTransition(opacity);
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &-navigation {
+    position: relative;
+    min-height: 48px;
+    margin: 0 -15px;
+  }
+
+  &-link {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 16px;
+    line-height: 26px;
+    color: black;
+    font-weight: 100;
+    @include setTransition(color);
+    will-change: color, cursor;
+
+    &:hover {
+      cursor: pointer;
+      color: $primary;
+    }
+  }
+
+  &-column {
+    padding-right: 15px;
+    padding-left: 15px;
+
+    a {
+      font-size: 16px;
+      line-height: 26px;
+      color: black;
+      font-weight: $regular;
+      will-change: color, cursor;
+
+      &:hover {
+        cursor: pointer;
+        color: $primary;
+      }
+    }
+  }
+}

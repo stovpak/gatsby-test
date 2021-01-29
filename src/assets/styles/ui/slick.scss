@@ -1,0 +1,157 @@
+.slick {
+  &-slider {
+    position: relative;
+    width: 100%;
+
+    .slick {
+      &-dots {
+        width: auto;
+        text-align: left;
+        border-radius: 5px;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 10px 3px;
+
+        li {
+          margin: 0;
+
+          &.slick-active {
+            opacity: 1;
+            color: white;
+
+            button {
+              &:before {
+                color: white;
+                opacity: 1;
+              }
+            }
+          }
+
+          button {
+            &:before {
+              font-size: 8px;
+              color: white;
+              opacity: 0.5;
+              @include setTransition(opacity);
+
+              &:hover {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+
+      &-next {
+        right: 0;
+      }
+
+      &-prev {
+        left: 0;
+        z-index: 12;
+      }
+
+      &-arrow {
+        .ds-button {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      &-disabled {
+        .ds-button {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &-slide,
+  &-slide > div,
+  &-slide > div > div {
+    height: 100%;
+  }
+}
+
+.slider {
+  &-gradient {
+    .slick-list {
+      position: relative;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 100px;
+        position: absolute;
+        right: -5px;
+        top: 0;
+        bottom: 0;
+        @include horizontalGradient(white, 0, white, 1, 90deg);
+      }
+    }
+  }
+
+  &-cards {
+    .slick {
+      &-list {
+        padding-left: 7px;
+      }
+
+      &-track {
+        display: flex !important;
+        padding-top: 10px;
+        padding-bottom: 20px;
+      }
+
+      &-slide {
+        height: inherit !important;
+        margin-right: 32px;
+      }
+    }
+  }
+
+  &-controls {
+    &-content {
+      position: absolute;
+      bottom: 110px;
+    }
+
+    .slick-dots {
+      background: white;
+      box-shadow: $default-box-shadow;
+      border-radius: 9px;
+      bottom: 0;
+      position: relative;
+      margin: 0 50px;
+
+      li {
+        button {
+          &:before {
+            color: lighten($primary, 10);
+          }
+        }
+
+        &.slick-active {
+          button {
+            &:before {
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.hero-slider {
+  .slick {
+    &-dots {
+      bottom: 50px;
+      left: calc((100vw - 76rem) / 2 + 1rem);
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}

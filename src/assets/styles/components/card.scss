@@ -1,0 +1,182 @@
+.ant-card {
+  position: relative;
+
+  &-shadow {
+    background: white;
+    box-shadow: $default-box-shadow;
+    border-radius: 9px;
+    padding: 75px 25px 15px;
+    @include setTransition(box-shadow);
+
+    &:hover {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &-image {
+    position: absolute;
+    top: -18px;
+    left: 20px;
+    width: 74px;
+
+    @media (max-width: $screen-md-max) {
+      width: 52px;
+    }
+  }
+
+  &-description {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  &-icon {
+    padding-top: 75px;
+  }
+
+  &-bottom-link {
+    padding-bottom: 45px;
+  }
+
+  &-empty {
+    padding: 0 !important;
+  }
+
+  &-head,
+  &-body {
+    .ds-card-text & {
+      padding: 0;
+    }
+  }
+
+  &-head {
+    .ds-card-text & {
+      font-size: 30px;
+
+      border-bottom-width: 0;
+    }
+  }
+
+  &-body {
+    .ds-card-text & {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: $regular;
+    }
+
+    .ds-card-centered & {
+      display: flex;
+      align-items: center;
+
+      height: 100%;
+    }
+  }
+
+  &-meta {
+    &-avatar {
+      .ds-card & {
+        padding-right: 25px;
+      }
+    }
+
+    &-description {
+      .ds-card & {
+        font-size: 14px;
+        color: #fff;
+        font-weight: $regular;
+        line-height: 1.45;
+      }
+    }
+  }
+
+  &.ds-card {
+    height: 100%;
+    margin-bottom: 20px;
+
+    @media (max-width: $screen-md-max) {
+      flex-direction: column;
+    }
+
+    &-primary {
+      @include cornerGradient($primary, $info);
+    }
+
+    &-rounded {
+      border-radius: 10px;
+    }
+  }
+
+  .ds-card-avatar {
+    &-wrapper {
+      .ant-avatar,
+      .anticon,
+      img,
+      svg {
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        min-width: 100%;
+
+        border-radius: 0;
+
+        object-fit: contain;
+
+        color: #fff;
+      }
+    }
+
+    &-md {
+      width: 64px;
+      height: 64px;
+    }
+  }
+}
+
+.ds-card {
+  position: relative;
+
+  &-shadow {
+    background: white;
+    box-shadow: $default-box-shadow;
+    border-radius: 9px;
+    margin-bottom: 32px;
+    padding: 15px 25px;
+    @include setTransition(box-shadow);
+
+    &:hover {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &-icon {
+    padding-top: 75px;
+
+    @media (max-width: $screen-sm-max) {
+      padding-top: 10px;
+    }
+  }
+
+  &-image {
+    position: absolute;
+    top: -18px;
+    left: 20px;
+    width: 74px;
+
+    @media (max-width: $screen-sm-max) {
+      width: 52px;
+    }
+  }
+
+  &-description {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  &-empty {
+    padding: 0 !important;
+    display: flex !important;
+  }
+
+  &-bottom-link {
+    padding-bottom: 45px;
+  }
+}

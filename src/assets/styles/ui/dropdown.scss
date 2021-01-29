@@ -1,0 +1,85 @@
+.ant-dropdown {
+  &-link {
+    font-size: 16px;
+    line-height: 26px;
+    color: black;
+    font-weight: $regular;
+    will-change: color;
+    @include setTransition(color);
+
+    svg {
+      margin-top: 3px;
+      @include setTransition(transform);
+      will-change: color, transform;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &-text {
+      padding-right: 10px;
+    }
+  }
+
+  &-open {
+    .ant-dropdown-link-text {
+      color: $primary;
+      cursor: pointer;
+    }
+
+    svg {
+      transform: rotate(180deg) translateY(1px);
+      color: $primary;
+    }
+  }
+
+  .ant-dropdown {
+    &-menu {
+      display: flex;
+      flex-direction: row;
+
+      &-columns {
+        display: flex;
+        flex-direction: row;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.09);
+        border-radius: 9px;
+        padding: 25px 30px;
+
+        .ant-dropdown-menu-item {
+          padding: 0 75px 0 0;
+
+          &:hover {
+            background-color: transparent;
+          }
+
+          &:last-of-type {
+            padding-right: 0;
+          }
+
+          .item {
+            &-title {
+              font-weight: bold;
+              font-size: 12px;
+              line-height: 15px;
+              margin-bottom: 5px;
+            }
+
+            &-link {
+              font-size: 14px;
+              line-height: 26px;
+              color: black;
+              font-weight: $light;
+              will-change: color;
+              @include setTransition(color);
+
+              &:hover {
+                color: $primary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

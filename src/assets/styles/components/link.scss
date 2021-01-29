@@ -1,0 +1,67 @@
+.ds-link {
+  &-white {
+    color: white;
+    will-change: color;
+    @include setTransition(color);
+
+    &:hover {
+      color: $info-secondary;
+    }
+  }
+
+  &-icon {
+    .ds-icon {
+      margin-left: 4px;
+      margin-top: 1px;
+    }
+  }
+
+  &-primary {
+    color: $primary;
+    will-change: color;
+    @include setTransition(color);
+
+    &:hover {
+      color: $primary-secondary;
+    }
+  }
+
+  &-bottom {
+    position: absolute;
+    bottom: 20px;
+  }
+
+  &-md {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &-xl {
+    font-size: 20px;
+
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  &-primary {
+    color: $primary;
+  }
+
+  &-bold {
+    font-weight: bold;
+
+    .ant-typography {
+      &:hover,
+      &:hover .ant-typography {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &:hover,
+  &:hover .ant-typography {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,15 @@
+.rich-text {
+  h2 {
+    font-size: 28px;
+    line-height: 36px;
+    text-transform: uppercase;
+    color: $primary;
+    font-weight: $bold;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 20px;
+    color: $muted;
+  }
+}

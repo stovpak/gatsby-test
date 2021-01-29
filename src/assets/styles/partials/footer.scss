@@ -1,0 +1,87 @@
+.ant-layout {
+  &-footer.footer {
+    padding: 30px 0 55px;
+    @include horizontalGradient($primary, 1, $info, 1, 100deg);
+  }
+}
+
+.footer {
+  .media {
+    width: 50%;
+
+    @media (max-width: $screen-md-max) {
+      text-align: center;
+      width: 100%;
+      order: 2;
+      margin-top: 40px;
+    }
+
+    &-image {
+      margin-bottom: 40px;
+    }
+
+    &-description {
+      max-width: 430px;
+      display: flex;
+      color: white;
+
+      @media (max-width: $screen-md-max) {
+        display: none;
+      }
+    }
+  }
+
+  .text {
+    display: none;
+
+    @media (max-width: $screen-md-max) {
+      display: block;
+      order: 4;
+      color: white;
+      font-size: 12px;
+      line-height: 18px;
+      text-align: center;
+    }
+  }
+
+  &-content {
+    @media (max-width: $screen-md-max) {
+      flex-direction: column;
+    }
+  }
+
+  .nav {
+    width: 50%;
+
+    @media (max-width: $screen-md-max) {
+      width: 100%;
+      flex-direction: column;
+    }
+
+    &-block {
+      width: 50%;
+
+      @media (max-width: $screen-md-max) {
+        width: 100%;
+        text-align: center;
+      }
+
+      .social-links {
+        margin-top: 10px;
+
+        @media (max-width: $screen-md-max) {
+          justify-content: center;
+          margin-top: 20px;
+        }
+
+        .social-link {
+          &:first-of-type {
+            @media (max-width: $screen-md-max) {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

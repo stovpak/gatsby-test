@@ -1,0 +1,152 @@
+.backdrop_block {
+  position: absolute;
+  content: "";
+
+  top: 0;
+  bottom: 0;
+
+  margin: auto;
+
+  width: 90%;
+  height: 95%;
+
+  @include cornerGradient($primary, $info);
+
+  border-radius: 50px;
+
+  z-index: 0;
+
+  @media (max-width: $screen-md-max) {
+    height: 110%;
+  }
+}
+
+.ds-image {
+  &-bordered {
+    border-bottom-left-radius: 80px;
+    border-top-right-radius: 80px;
+
+    &-reverse {
+      border-bottom-right-radius: 80px;
+      border-top-left-radius: 80px;
+    }
+  }
+
+  &-wrap {
+    &.backdrop & {
+      position: relative;
+
+      z-index: 1;
+    }
+
+    &.backdrop {
+      position: relative;
+
+      &:after {
+        @extend .backdrop_block;
+
+        left: 50%;
+        transform: rotate(-25deg);
+      }
+
+      &-reverse {
+        &:after {
+          left: auto;
+          right: 40%;
+          transform: rotate(30deg);
+          @include cornerGradient($info, $primary);
+        }
+      }
+    }
+
+    .ds-image {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+  }
+}
+
+.ant-image {
+  &-img {
+    .ds-image-bordered & {
+      border-bottom-left-radius: 80px;
+      border-top-right-radius: 80px;
+    }
+
+    .ds-image-bordered-reverse & {
+      border-bottom-right-radius: 80px;
+      border-top-left-radius: 80px;
+    }
+
+    .backdrop & {
+      position: relative;
+
+      z-index: 1;
+    }
+  }
+
+  &.ds-image {
+    &-bordered {
+      &.backdrop {
+        position: relative;
+
+        &:after {
+          @extend .backdrop_block;
+
+          left: 35%;
+          transform: rotate(-25deg);
+        }
+
+        &-reverse {
+          &:after {
+            left: auto;
+            right: 35%;
+          }
+        }
+      }
+
+      &-reverse {
+        &.backdrop {
+          &:after {
+            @extend .backdrop_block;
+
+            right: 35%;
+            transform: rotate(30deg);
+
+            @include cornerGradient($info, $primary);
+          }
+
+          &-reverse {
+            &:after {
+              right: auto;
+              left: 35%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+img {
+  .ds-image-invert & {
+    filter: invert(1);
+  }
+}
+
+.img {
+  &-loading {
+    display: none;
+  }
+
+  &-preview {
+    filter: blur(20px);
+  }
+}
+
+.ds-image {
+  &-visibility {
+    opacity: 0.4;
+  }
+}
